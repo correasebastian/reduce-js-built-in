@@ -1,11 +1,31 @@
-var data = [15, 3, 20];
+//see CONSOLE!
+var votes = [
+    "angular",
+    "angular",
+    "react",
+    "react",
+    "react",
+    "angular",
+    "ember",
+    "react",
+    "vanilla"
+  ];
+  
+  var initialValue = {};
 
-var reducer = function(accumulator, item) {
-  return accumulator + item;
-};
+  var reducer = function (tally, vote) {
 
-var initialValue = 0;
+      tally[vote] = tally[vote]
+          ? tally[vote] + 1
+          :  1
 
-var total = data.reduce(reducer, initialValue);
-
-console.log("The sum is: ", total);
+      return tally
+  };
+  
+  var result = votes.reduce(reducer, initialValue);
+  
+  // Output
+  console.log("Angular: ", result.angular)
+  console.log("React: ", result.react)
+  console.log("Ember: ", result.ember)
+  console.log("Vanilla: ", result.vanilla)
