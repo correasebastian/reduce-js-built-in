@@ -50,3 +50,16 @@ var pipeline_result = pipeline.reduce(
 )
 
 console.log(` pipeline_result  is ${pipeline_result}`);
+
+function compose(...fns) {
+    return (input) =>
+        fns.reduce(
+            (acc, fn) => fn(acc),
+            input
+        )
+
+}
+
+var composition = compose (increment, double, decrement);
+
+console.log(` composition_result  is ${composition(initial_value)}`);
