@@ -1,31 +1,5 @@
-//see CONSOLE!
-var votes = [
-    "angular",
-    "angular",
-    "react",
-    "react",
-    "react",
-    "angular",
-    "ember",
-    "react",
-    "vanilla"
-  ];
-  
-  var initialValue = {};
+var data = [1,2,3]
 
-  var reducer = function (tally, vote) {
+var result = data.reduce((acc, curr)=> acc.concat(curr*2),[])
 
-      tally[vote] = tally[vote]
-          ? tally[vote] + 1
-          :  1
-
-      return tally
-  };
-  
-  var result = votes.reduce(reducer, initialValue);
-  
-  // Output
-  console.log("Angular: ", result.angular)
-  console.log("React: ", result.react)
-  console.log("Ember: ", result.ember)
-  console.log("Vanilla: ", result.vanilla)
+console.log(result);
