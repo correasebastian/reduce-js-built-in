@@ -1,5 +1,12 @@
-var data = [1,2,3]
+var data = [1, 2, 3, 4, 5, 6]
 
-var result = data.reduce((acc, curr)=> acc.concat(curr*2),[])
+var onlyEven = data.reduce(
+    (acc, curr) =>
+        curr % 2 === 0
+            ? acc.concat(curr)
+            : acc
+    , []
+)
 
-console.log(result);
+console.log(onlyEven);
+
