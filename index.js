@@ -1,52 +1,28 @@
+function increment(input) { 
+    console.log(`increment ${input}`);
+    return input + 1; 
+}
+function decrement(input) { 
+    console.log(`decrement ${input}`);
+    return input - 1;
+ }
+function double(input) { 
+    console.log(`double ${input}`);
+    return input * 2; 
+}
+function halve(input) { 
+    console.log(`halve ${input}`);
+    return input / 2; 
+}
 
-var input = [
-    {
-      title: "Batman Begins",
-      year: 2005,
-      cast: [
-        "Christian Bale",
-        "Michael Caine",
-        "Liam Neeson",
-        "Katie Holmes",
-        "Gary Oldman",
-        "Cillian Murphy"
-      ]
-    },
-    {
-      title: "The Dark Knight",
-      year: 2008,
-      cast: [
-        "Christian Bale",
-        "Heath Ledger",
-        "Aaron Eckhart",
-        "Michael Caine",
-        "Maggie Gyllenhal",
-        "Gary Oldman",
-        "Morgan Freeman"
-      ]
-    },
-    {
-      title: "The Dark Knight Rises",
-      year: 2012,
-      cast: [
-        "Christian Bale",
-        "Gary Oldman",
-        "Tom Hardy",
-        "Joseph Gordon-Levitt",
-        "Anne Hathaway",
-        "Marion Cotillard",
-        "Morgan Freeman",
-        "Michael Caine"
-      ]
-    }
-  ];
-  
-  var result = input.reduce(
-      (acc, curr)=> {
-          curr.cast.forEach(actor => acc.add(actor))
-          return acc
-      },
-      new Set()
-  )
+var initial_value = 1;
 
-  console.log(result);
+/* 
+Naive
+difficult to read, you can call a function with the worng parameter
+*/
+var increment_value = increment(initial_value);
+var double_value = double(increment_value);
+var decrement_value = decrement(double_value)
+
+console.log(` result is ${decrement_value}`);
