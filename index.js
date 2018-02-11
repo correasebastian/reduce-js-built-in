@@ -26,3 +26,27 @@ var double_value = double(increment_value);
 var decrement_value = decrement(double_value)
 
 console.log(` result is ${decrement_value}`);
+
+
+/* transform function */
+
+function transform (input ){
+    return ((( input + 1) * 2) -1) 
+}
+
+console.log(` transform  is ${transform(initial_value)}`);
+
+/* Pipeline */
+
+var pipeline = [
+    increment,
+    double,
+    decrement
+]
+
+var pipeline_result = pipeline.reduce(
+    (acc, fn) => fn(acc),
+    initial_value
+)
+
+console.log(` pipeline_result  is ${pipeline_result}`);
